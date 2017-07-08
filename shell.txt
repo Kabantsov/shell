@@ -1,0 +1,21 @@
+if [ $# -ne 3 ]
+then
+	echo Нужно только 3 параметра
+	exit
+fi
+i=0
+while [ "$i" -lt "$1" ]
+	do
+		echo "Введите строку"
+		read b
+		echo $b >> file.txt
+		i='expr $i + 1'
+	done
+
+file.txt | while read line
+	do
+		line=${line//$2/$3}
+		echo $line > file1.txt
+		echo $line
+	done
+>file.txt
